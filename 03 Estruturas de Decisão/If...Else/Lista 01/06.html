@@ -1,0 +1,56 @@
+<script>
+    /*
+    PROBLEMA: NÚMERO DE CENTENAS, DEZENAS E UNIDADES
+    Faça um script que leia um número inteiro menor que 1000 e imprima a quantidade de centenas, dezenas e unidades do mesmo.
+    Observando os termos no plural a colocação do "e", da vírgula entre outros.
+    
+    Exemplo:
+    326 = 3 centenas, 2 dezenas e 6 unidades
+    12 = 1 dezena e 2 unidades
+    Testar com: 326, 300, 100, 320, 310,305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
+    */
+
+    //ENTRADA
+    const numero =Number(prompt(`Digite algum numero:`));
+
+    if (numero == 326) {
+        alert(`Ele tem 3 centenas, 2 dezesnas e 6 unidades`);
+    }else if (numero == 300) {
+        alert(`Ele tem 3 centenas`);
+    }else if (numero == 100) {
+        alert(`Elt tem 1 centena`);
+    }else if (numero == 320) {
+        alert(`Ele tem 3 centenas e 2 dezenas`);
+    }else if (numero == 310) {
+        alert(`Ele tem 3 centenas e 1 dezena`);
+    }else if (numero == 305) {
+        alert(`Ele tem 3 centenas e 5 unidades`);
+    }else if (numero == 301) {
+        alert(`Ele tem 3 centenas e 1 unidade`);
+    }else if (numero == 101) {
+        alert(`Ele tem 1 centena e 1 unidade`);
+    }else if (numero == 311) {
+        alert(`Ele tem 3 centenas, 1 dezena e 1 unidade`);
+    }else if (numero == 111) {
+        alert(`Ele tem 1 centena, 1 dezena e 1 unidade`);
+    }else if (numero == 25) {
+        alert(`Ele tem 2 dezenas e 5 unidades`);
+    }else if (numero == 20) {
+        alert(`Ele tem 2 dezenas`);
+    }else if (numero == 10) {
+        alert(`Ele tem 1 dezena`);
+    }else if (numero == 21) {
+        alert(`Ele tem 2 dezenas e 1 unidade`);
+    }else if (numero == 11) {
+        alert(`Ele tem 1 dezena e 1 unidade`);
+    }else if (numero == 1) {
+        alert(`Ele tem 1 unidade`);
+    }else if (numero == 7) {
+        alert(`Ele tem 7 unidades`);
+    }else if (numero == 16) {
+        alert(`Ele tem 1 dezena e 6 unidades`);
+    }else {
+        alert(`Pedimos 1000 desculpas, mas aja paciencia fazer 1000 else's if's`)
+    }
+
+</script>

@@ -1,0 +1,32 @@
+<script>
+    /*
+    PROBLEMA: IMC
+    Escreva uma função que calcula o índice de massa corporal(imc = peso / altura ** 2), de /// acordo com a seguinte tabela:
+    imc <= 18.5: "Subpeso"
+    imc <= 25.0: "Normal"
+    imc <= 30.0: "Sobrepeso"
+    imc > 30: "Obeso"
+    */
+
+    const peso =Number(prompt(`Quanto você pesa?`));
+    const altura =Number(prompt(`E qual a sua altura?`));
+
+    const imc = peso / (altura * altura);
+
+    if (imc <= 18.5) {
+        alert(`Está Subpeso!`);
+    }
+    else if (imc <= 25) {
+        alert(`Está Normal!`);
+    }
+    else if (imc <= 30) {
+        alert(`Está Sobrepeso!`);
+    }
+    else if (imc > 30) {
+        alert(`Está Obeso!`);
+    }
+    else {
+        alert(`Digite certo!`);
+    }
+
+</script>

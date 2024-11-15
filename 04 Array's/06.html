@@ -1,0 +1,69 @@
+<script>
+    /*
+    PROBLEMA: LOJA DE VEÍCULOS
+    Crie os seguintes arrays:
+    let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+    let cassosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
+    let carrosHatch = ["308", "Focus", "i30"];
+    
+    Peça para o usuário informar mais três veículos para serem inseridos na lista. Para inserir na lista correta, peça também para o usuário identificar o tipo de veículo que deseja inserir, se é SUV, Sedan ou Hatch.
+
+    Apresente a lista final de cada tipo de veículo.
+    */
+
+    let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+    let carrosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
+    let carrosHatch = ["308", "Focus", "i30"];
+
+    const carro1 = prompt(`Informe um nome de um veículo`);
+    const tipo1 = prompt(`Informe o tipo desse veículo: SUV, Sedan ou Hatch`).toUpperCase().trim();
+    const carro2 = prompt(`Informe um nome de um veículo`);
+    const tipo2 = prompt(`Informe o tipo desse veículo: SUV, Sedan ou Hatch`).toUpperCase().trim();;
+    const carro3 = prompt(`Informe um nome de um veículo`);
+    const tipo3 = prompt(`Informe o tipo desse veículo: SUV, Sedan ou Hatch`).toUpperCase().trim();;
+
+    // TIPO 1
+    if (tipo1 == "SUV") {
+        carrosSUV.push(carro1);
+    }
+    else if (tipo1 == "SEDAN") {
+        carrosSedan.push(carro1);
+    }
+    else if (tipo1 == "HATCH") {
+        carrosHatch.push(carro1);
+    }
+    else {
+        alert(`Digite certo o tipo do carro!`);
+    }
+    // TIPO 2
+    if (tipo2 == "SUV") {
+        carrosSUV.push(carro1);
+    }
+    else if (tipo2 == "SEDAN") {
+        carrosSedan.push(carro1);
+    }
+    else if (tipo2 == "HATCH") {
+        carrosHatch.push(carro1);
+    }
+    else {
+        alert(`Digite certo o tipo do carro!`);
+    }
+    // TIPO 3
+    if (tipo3 == "SUV") {
+        carrosSUV.push(carro1);
+    }
+    else if (tipo3 == "SEDAN") {
+        carrosSedan.push(carro1);
+    }
+    else if (tipo3 == "HATCH") {
+        carrosHatch.push(carro1);
+    }
+    else {
+        alert(`Digite certo o tipo do carro!`);
+    }
+    //CONCLUSÃO
+    alert(`Lista dos carros SUV: ${carrosSUV.join(", ")}`);
+    alert(`Lista dos carros Sedan: ${carrosSedan.join(", ")}`);
+    alert(`Lista dos carros Hatch: ${carrosHatch.join(", ")}`);
+
+</script>

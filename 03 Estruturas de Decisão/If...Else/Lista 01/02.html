@@ -1,0 +1,27 @@
+<script>
+    /*
+    PROBLEMA: ORDEM DECRESCENTE
+    Faça um script que leia três números e mostre-os em ordem decrescente.
+    */
+
+    //ENTRADA
+    const primeiro =Number(prompt(`Digite um numero!`));
+    const segundo =Number(prompt(`Outro numero!`));
+    const terceiro =Number(prompt(`E agora outro numero!`));
+    
+    //PROCESSAMENTO
+    if (primeiro >= segundo && segundo >= terceiro) {
+        alert(`A ordem decrescente e ${primeiro}, ${segundo} e ${terceiro}`);
+    }else if (primeiro >= terceiro && terceiro >= segundo) {
+        alert(`A ordem decrescente e ${primeiro}, ${terceiro} e ${segundo}`);
+    }else if (segundo >= primeiro && primeiro >= terceiro ) {
+        alert(`A ordem decrescente e ${segundo}, ${primeiro} e ${terceiro}`);
+    }else if (segundo >= terceiro && terceiro >= primeiro) {
+        alert(`A ordem decrescente e ${segundo}, ${terceiro} e ${primeiro}`);
+    }else if (terceiro >= primeiro && primeiro >= segundo) {
+        alert(`A ordem decrescente e ${terceiro}, ${primeiro} e ${segundo}`);
+    }else {
+        alert(`A ordem decrescente e ${terceiro}, ${segundo} e ${primeiro}`);
+    }
+    
+</script>

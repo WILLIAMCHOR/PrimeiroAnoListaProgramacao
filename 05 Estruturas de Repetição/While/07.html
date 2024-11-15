@@ -1,0 +1,70 @@
+<script>
+    /*
+    PROBLEMA: PESQUISA DE IDADE
+    Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (M/F) e salário. Faça um programa que calcule e mostre:
+
+    a) A média dos salários do grupo;
+    b) A maior e a menor idade do grupo;
+    c) A quantidade de mulheres na região;
+    d) A idade e o sexo da pessoa que possui o menor salário;
+
+    Finalize a entrada de dados ao ser digitada uma idade negativa.
+    */
+
+    let idade = [];
+    let sexo = [];
+    let salario = [];
+    let mediaDeSalario = 0;
+
+    // Entrada de Dados
+
+    do {
+        idade.push(Number(prompt(`Sua idade:`)));
+        if (idade[idade.length - 1] > 0) {
+            sexo.push(prompt(`Qual o seu sexo? M/F`).toUpperCase().trim());
+            salario.push(Number(prompt(`Seu salario:`)));
+        // Somando os salários
+            mediaDeSalario = mediaDeSalario + salario[salario.length - 1];
+        }
+
+    } while(idade[idade.length - 1] > 0);
+    idade.pop();
+
+    // Processamento
+
+        // Calculando média do salário
+
+    mediaDeSalario = mediaDeSalario / salario.length;
+
+        // Maior e Menor Idade do Grupo
+
+    let maiorIdade = Math.max(...idade);
+    let menorIdade = Math.min(...idade);
+
+        // Quantidade de mulheres
+
+    let mulheres = 0;
+        for (let mulher of sexo) {
+        if (mulher == "F") {
+            mulheres ++;
+        }
+    }
+
+        // Localizando menor salário
+    let menorSalario = salario.indexOf(Math.min(...salario));
+    let menorSexo = "uma mulher";
+    if (sexo[menorSalario] == "M") {
+        menorSexo = "um homem";
+    }
+
+    // Saída de Dados Processados
+
+    document.write(`</br> Resultados da pesquisa: </br>
+    a) Média dos salários: R$${mediaDeSalario.toFixed(2).replace("." , ",")} </br>
+    b) Mais velho: ${maiorIdade} </br>
+       Mais novo: ${menorIdade} </br>
+    c) Quantidade de mulheres: ${mulheres} </br>
+    d) O menor salário da região é ${salario[menorSalario]} sendo de ${menorSexo} com ${idade[menorSalario]} anos.
+    `);
+
+</script>

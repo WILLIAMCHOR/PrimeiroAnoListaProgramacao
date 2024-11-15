@@ -1,0 +1,53 @@
+<script>
+    /*
+    PROBLEMA: INVESTIGAÇÃO CRIMINAL
+    Faça um script que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+    - "Telefonou para a vítima?"
+    - "Esteve no local do crime?"
+    - "Mora perto da vítima?"
+    - "Devia para a vítima?"
+    - "Já trabalhou com a vítima?"
+    O script deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+    */
+    const telefone = prompt(`O suspeito telefonou para a vitima? Sim ou Nao`).toUpperCase().trim();
+    const local = prompt(`O suspeito esteve o local do crime? Sim ou Nao`).toUpperCase().trim();
+    const mora = prompt(`O suspeitos morava perto da vitima? Sim ou Nao`).toUpperCase().trim();
+    const dever = prompt(`O suspeito devia para a vitima? Sim ou Nao`).toUpperCase().trim();
+    const trabalho = prompt(`O suspeito já trabalhou com a vitima?`).toUpperCase().trim();
+    
+    let estrela1 = 0;
+    let estrela2 = 0;
+    let estrela3 = 0;
+    let estrela4 = 0;
+    let estrela5 = 0;
+
+    if (telefone == "SIM") {
+        estrela1 = 1;
+    }
+    if (local == "SIM") {
+        estrela2 = 1;
+    }
+    if (mora == "SIM") {
+        estrela3 = 1;
+    }
+    if (dever == "SIM") {
+        estrela4 = 1;
+    }
+    if (trabalho == "SIM") {
+        estrela5 = 1;
+    }
+    let suspeito = estrela1 + estrela2 + estrela3 + estrela4 + estrela5;
+    if (suspeito == 5) {
+        alert(`O suspeito é o Assassino`);
+    }
+    if (suspeito == 4 || suspeito == 3) {
+        alert(`O suspeito é Cumplice`);
+    }
+    if (suspeito == 2) {
+        alert(`O suspeito é um Suspeito`);
+    }
+    if (suspeito <= 1) {
+        alert(`O suspeito é Inocente!`);
+    }
+    
+</script>

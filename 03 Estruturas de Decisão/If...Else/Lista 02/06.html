@@ -1,0 +1,44 @@
+<script>
+    /*
+    PROBLEMA: CUSTO DO DIA DE TRABALHO
+    Peça para o programa perguntar ao usuário quantas viagens foram realizadas por dia e também qual o cargo que ocupa.
+    
+    Considere que o valor da diária é de R$ 100,00 (100).
+    
+    - Se o usuário ocupar o cargo de "Motorista" e realizou até 10 viagens, haverá um adicional de 20% (20/100).
+    - Se o usuário ocupar o cargo de "Motorista" e realizou mais de 10 viagens, haverá um adicional de 35% (35/100).
+    - Contudo, se o cargo do usuário for "Cobrador" e realizou até 10 viagens, não haverá adicional.
+    - Se o usuário ocupar o cargo de "Cobrador" e realizou mais de 10 viagens, haverá um adicional de 10% (10/100).
+    
+    Apresente em tela o cargo do usuário e também o valor final recebido pelas viagens realizadas.
+    */
+
+    const viagens =Number(prompt(`Quantas viagens você realizou hoje?`));
+    const cargo = prompt(`E qual é o seu cargo? Motorista ou Cobrador`).toUpperCase().trim();
+
+    let diaria = 0;
+    if (cargo == "MOTORISTA") {
+        if (viagens <= 10) {
+            diaria = 100 * 1.20;
+            alert(`Você ganhou R$${diaria.toFixed(2).replace("." , ",")} hoje!`);
+        }
+        else {
+            diaria = 100 * 1.35;
+            alert(`Você ganhou R$${diaria.toFixed(2).replace("." , ",")} hoje!`);
+        }
+    }
+    else if (cargo == "COBRADOR") {
+        if (viagens <= 10) {
+            diaria = 100;
+            alert(`Você ganhou R$${diaria.toFixed(2).replace("." , ",")} hoje!`);
+        }
+        else {
+            diaria = 100 * 1.10;
+            alert(`Você ganhou R$${diaria.toFixed(2).replace("." , ",")} hoje!`);
+        }
+    }
+    else {
+        alert(`Digite certo!`);
+    }
+
+</script>

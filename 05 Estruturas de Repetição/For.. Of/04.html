@@ -1,0 +1,24 @@
+<script>
+    //PROBLEMA
+    //Considere a lista abaixo:
+    // let listaDeItens = [1, "João", "Eduardo", "Joice", 3, 5, 6, 8, "Maria", 5.6, 10];
+    //Apresente apenas os números pares. Apresente também a quantidade de números pares que existem e apresente a quantidade de elementos da lista original.
+
+    let listaDeItens = [1, "João", "Eduardo", "Joice", 3, 5, 6, 8, "Maria", 5.6, 10];
+    let pares = [];
+    let listaPares = [];
+
+    for (let valor of listaDeItens) {
+        if ((valor % 2) == 0) {
+            pares.push(valor);
+            listaPares.push(valor);
+        }
+    }
+    const original = listaDeItens.length;
+    const nova = pares.length;
+    alert(`
+    Na lista original existem ${original} itens. 
+    Já na lista de numeros pares existem ${nova} itens, sendo ${listaPares.join(", ")}`
+    );
+
+</script>

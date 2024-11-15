@@ -1,0 +1,32 @@
+<script>
+    /*
+    PROBLEMA: ÁREA DO RETÂNGULO
+    Crie um objeto chamado retangulo com as propriedades base e altura, e crie um método para calcular a área do retângulo.
+    */
+    
+    const retangulo = {
+        base: Number(prompt(`Valor da base do triangulo`)),
+        altura: Number(prompt(`Valor da altura do triangulo`)),
+        area: function () {
+                area = this.base * this.altura;
+                return area;
+            }
+    };
+    // O paia mesmo é que tem que por parenteses no objeto "area" para exibir corretamente, já que é uma função.
+    alert(`
+    *Valores do triangulo:
+    Base: ${retangulo.base}
+    Altura: ${retangulo.altura}
+    Area: ${retangulo.area()}
+    `);
+
+    /* ALTERNATIVA:
+    const retangulo = {
+        base: 10,
+        altura: 15
+    };
+    retangulo.area = retangulo.base * retangulo.altura;
+    document.write(`${retangulo.area}`); // 150.
+    */
+    
+</script>

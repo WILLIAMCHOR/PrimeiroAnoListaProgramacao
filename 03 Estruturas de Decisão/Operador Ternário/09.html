@@ -1,0 +1,21 @@
+<script>
+    /*
+    PROBLEMA: CALCULAR VALOR DA HORA TRABALHADA
+    Faça um script que peça para o usuário informar a quantidade de horas trabalhadas semanalmente e quanto que recebe por hora trabalhada.
+    Se o total de horas trabalhadas for até 45 horas (inclusive), não haverá adicional.
+    Se o total de horas trabalhadas for até 60 horas (inclusive), haverá adicional de 20%.
+    Se o total de horas trabalhadas ultrapassar 60 horas, haverá adicional de 30%.
+    Apresente o salário final recebido pelo funcionário semanalmente e o preço de cada hora trabalhada.
+    */
+
+    const semanal =Number(prompt(`Quantas horas você trabalha por semana?`));
+    const hora =Number(prompt(`E quanto você recebe por hora?`));
+
+    let resultado = 0;
+    (semanal <= 45) ? 
+    alert(`Seu salário semanal é ${(semanal * hora).toFixed(2).replace("." , ",")} e recebe ${hora.toFixed(2).replace("." , ",")} por hora.`) :
+    (semanal <= 60) ?
+    alert(`Seu salário semanal é ${(semanal * hora * 1.20).toFixed(2).replace("." , ",")} e recebe ${(hora * 1.20).toFixed(2).replace("." , ",")} por hora.`) :
+    alert(`Seua salário semanal é ${(semanal * hora * 1.30).toFixed(2).replace("." , ",")} e recebe ${(hora * 1.30).toFixed(2).replace("." , ",")}`);
+
+</script>

@@ -1,0 +1,18 @@
+<script>
+    //PROBLEMA
+    //Considere a lista de nomes abaixo:
+    // let listaDeNomes = ["João Pedro", "Gabriel José", "Ulisses Joao", "Pedro Henrique", "João da Silva", "João Henrique", "Alisson João"];
+    //Identifique todos os nomes que contém "João" em qualquer parte do nome e separe-os em uma lista. Apresente a lista ao final do programa. Considere que poderão haver "Joãos" sem ~ (til).
+
+    let listaDeNomes = ["João Pedro", "Gabriel José", "Ulisses Joao", "Pedro Henrique", "João da Silva", "João Henrique", "Alisson João"];
+    let joaos = [];
+    for (let nome of listaDeNomes) {
+        const sem = nome.search("Joao");
+        const com = nome.search("João");
+        if(sem >= 0 | com >= 0) {
+            joaos. push(nome);
+        }
+    }
+    alert(`${joaos.join(", ")}`);
+
+</script>

@@ -1,0 +1,65 @@
+<script>
+    /*
+    PROBLEMA: INVESTIGAÇÃO CRIMINAL
+    Faça um script que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+    - "Telefonou para a vítima?"
+    - "Esteve no local do crime?"
+    - "Mora perto da vítima?"
+    - "Devia para a vítima?"
+    - "Já trabalhou com a vítima?"
+    O script deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+    */
+
+    const telefone = prompt(`Ele telefonou para a  vítima? Sim ou Nao`).toUpperCase().trim();
+    const local = prompt(`Ele esteve no local do crime? Sim ou Nao`).toUpperCase().trim();
+    const morar = prompt(`Ele mora perto da vítima? Sim ou Nao`).toUpperCase().trim();
+    const dever = prompt(`Ele devia para a vítima? Sim ou Nao`).toUpperCase().trim();
+    const trabalho = prompt(`Ele já trabalhou com a vítima? Sim ou Nao`).toUpperCase().trim();
+
+    let estrela1 = 0;
+    let estrela2 = 0;
+    let estrela3 = 0;
+    let estrela4 = 0;
+    let estrela5 = 0;
+
+    switch (telefone) {
+        case "SIM" : 
+            estrela1 = 1;
+            break;
+    }
+    switch (local) {
+        case "SIM" : 
+            estrela2 = 1;
+            break;
+    }
+    switch (morar) {
+        case "SIM" :
+            estrela3 = 1;
+            break;
+    }
+    switch (dever) {
+        case "SIM" : 
+            estrela4 = 1;
+            break;
+    }
+    switch (trabalho) {
+        case "SIM" : 
+            estrela5 = 1;
+    }
+    const conclusao = estrela1 + estrela2 + estrela3 + estrela4 + estrela5;
+    switch (conclusao) {
+        case 5 : 
+            alert(`Ele é o Assassino!`);
+            break;
+        case 4 : 
+        case 3 :
+            alert(`Ele é um Cúmplice!`);
+            break;
+        case 2 : 
+            alert(`Ele é Suspeito!`);
+            break;
+        default : 
+            alert(`O miliante está limpo!`);
+    }
+
+</script>

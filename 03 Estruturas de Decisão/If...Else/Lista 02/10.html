@@ -1,0 +1,34 @@
+<script>
+    /*
+    PROBLEMA: DESTINO TURÍSTICO
+    Peça para o usuário informar o preço do transporte aéreo para dois destinos de viagem (São Paulo, Rio de Janeiro).
+    
+    Peça também para informar o preço do hotel para os dois destinos (São Paulo, Rio de Janeiro) e quantos dias pretende ficar no destino.
+    
+    Calcule o custo final para cada um e apresente a melhor decisão, considerando que o destino pretendido será o com custo final mais baixo. 
+    
+    Apresente o destino final e o custo final da viagem para o destino.
+    */
+
+    const paulistaAereo =Number(prompt(`Quanto custá um transporte aéreo para São Paulo?`));
+    const paulistaHotel =Number(prompt(`Quanto custará a diária no hotel?`));
+    const paulistaDias =Number(prompt(`E quantos dias pretende ficar por lá?`));
+
+    const cariocaAereo =Number(prompt(`Quanto custá um transporte aéreo para Rio de Janeiro?`));
+    const cariocaHotel =Number(prompt(`Quanto custará a diária no hotel?`));
+    const cariocaDias =Number(prompt(`E quantos dias pretende ficar por lá?`));
+
+    const paulista = paulistaAereo + (paulistaHotel * paulistaDias);
+    const carioca = cariocaAereo + (cariocaHotel * cariocaDias);
+
+    if (paulista > carioca) {
+        alert(`Vale mais apena viajar para Rio de Janeiro, custando R$${carioca.toFixed(2).replace("." , ",")}`);
+    }
+    else if (carioca > paulista) {
+        alert(`Vale mais apena viajar para São Paulo, custando R$${paulista.toFixed(2).replace("." , ",")}`);
+    }
+    else {
+        alert(`Ambas viagens custam R$${paulista.toFixed(2).replace("." , ",")}`);
+    }
+
+</script>

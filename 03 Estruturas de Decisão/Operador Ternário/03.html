@@ -1,0 +1,15 @@
+<script>
+    /*
+    PROBLEMA: MAIOR DE DOIS NÚMEROS
+    Construa um algoritmo que leia dois números inteiros. Verifique qual dos dois números é maior e o escreva.
+    */
+
+    const primeiro =Number(prompt(`Digite um número!`));
+    const segundo =Number(prompt(`Agora digite outro!`));
+
+    let resultado = 0;
+    (primeiro > segundo) ? resultado = "O primeiro número é maior que o segundo!"  : (primeiro == segundo) ? resultado = "Ambos tem o mesmo valor!" : resultado = "O segundo número é maior que o primeiro!";
+
+    alert(`${resultado}`);
+    
+</script>

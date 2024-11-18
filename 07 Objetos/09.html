@@ -1,0 +1,27 @@
+<script>
+    /*
+    PROBLEMA: DADOS DO FUNCIONÁRIO
+    Crie um objeto chamado funcionario com as propriedades nome, cargo, salario, e crie um método que retorne o nome, cargo e salario do funcionário em formato string.
+    */
+    
+    const funcionario = {
+        nome: "Cleiton",
+        cargo: "Mestre dos Magos",
+        salario: "2 pedras mágicas"
+    };
+    function show(a) {
+        document.write(`
+        </br>
+        <strong>Funcionario</strong>
+        </br>
+        </br>
+        Nome: ${a.nome}
+        </br>
+        Cargo: ${a.cargo}
+        </br>
+        Salario: ${a.salario}
+        `);
+    }
+    let resultado = show(funcionario);
+    
+</script>

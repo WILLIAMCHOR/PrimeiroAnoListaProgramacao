@@ -8,27 +8,20 @@
     */
 
     let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];    
-    const perguta = prompt(`Remova um dos carros da lista: ${carrosSUV.join(", ")}`).toUpperCase().trim();
+    const perguta = prompt(`Remova um dos carros da lista: ${carrosSUV.join(", ")}`).trim();
 
     const antigo = `${carrosSUV.join(", ")}`;
-    if (perguta == "TIGGO") {
-        carrosSUV.splice(0, 1);
-    }
-    else if (perguta == "SPORTAGE") {
-        carrosSUV.splice(1, 1);
-    }
-    else if (perguta == "TUCSON") {
-        carrosSUV.splice(2, 1);
-    }
-    else if (perguta == "ECOSPORT") {
-        carrosSUV.splice(3, 1);
+
+    const local = carrosSUV.indexOf(carrosSUV.find((a) => a.toLowerCase() == perguta.toLocaleLowerCase()));
+    if (local > -1) {
+        carrosSUV.splice(local, 1);
+        alert(`
+            A antiga lista era ${antigo}.
+            Já agora é ${carrosSUV.join(", ")}
+        `);
     }
     else {
-        alert(`Você não removeu nenhuma SUV, então a lista ficou ${carrosSUV.join(", ")}`);
+        alert('Esse carro não existe!');
     }
-    alert(`
-    A antiga lista era ${antigo}.
-    Já agora é ${carrosSUV.join(", ")}
-    `);
 
 </script>

@@ -15,51 +15,24 @@
     let carrosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
     let carrosHatch = ["308", "Focus", "i30"];
 
-    const carro1 = prompt(`Informe um nome de um veículo`);
-    const tipo1 = prompt(`Informe o tipo desse veículo: SUV, Sedan ou Hatch`).toUpperCase().trim();
-    const carro2 = prompt(`Informe um nome de um veículo`);
-    const tipo2 = prompt(`Informe o tipo desse veículo: SUV, Sedan ou Hatch`).toUpperCase().trim();;
-    const carro3 = prompt(`Informe um nome de um veículo`);
-    const tipo3 = prompt(`Informe o tipo desse veículo: SUV, Sedan ou Hatch`).toUpperCase().trim();;
-
-    // TIPO 1
-    if (tipo1 == "SUV") {
-        carrosSUV.push(carro1);
+    function perguta() {
+        return prompt(`Informe um nome de um veículo`);
     }
-    else if (tipo1 == "SEDAN") {
-        carrosSedan.push(carro1);
-    }
-    else if (tipo1 == "HATCH") {
-        carrosHatch.push(carro1);
-    }
-    else {
-        alert(`Digite certo o tipo do carro!`);
-    }
-    // TIPO 2
-    if (tipo2 == "SUV") {
-        carrosSUV.push(carro1);
-    }
-    else if (tipo2 == "SEDAN") {
-        carrosSedan.push(carro1);
-    }
-    else if (tipo2 == "HATCH") {
-        carrosHatch.push(carro1);
-    }
-    else {
-        alert(`Digite certo o tipo do carro!`);
-    }
-    // TIPO 3
-    if (tipo3 == "SUV") {
-        carrosSUV.push(carro1);
-    }
-    else if (tipo3 == "SEDAN") {
-        carrosSedan.push(carro1);
-    }
-    else if (tipo3 == "HATCH") {
-        carrosHatch.push(carro1);
-    }
-    else {
-        alert(`Digite certo o tipo do carro!`);
+    for (let i = 0; i < 3; i++) {
+        const tipo = prompt(`Informe o tipo desse veículo: SUV, Sedan ou Hatch`).toUpperCase().trim();
+        if (tipo == "SUV") {
+            carrosSUV.push(perguta());
+        }
+        else if (tipo == "SEDAN") {
+            carrosSedan.push(perguta());
+        }
+        else if (tipo == "HATCH") {
+            carrosHatch.push(perguta());
+        }
+        else {
+            alert('Marca inválida!');
+            i--;
+        }
     }
     //CONCLUSÃO
     alert(`Lista dos carros SUV: ${carrosSUV.join(", ")}`);

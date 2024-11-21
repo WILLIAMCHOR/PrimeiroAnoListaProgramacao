@@ -12,10 +12,29 @@
     */
 
     const nomeCores = ["azul", "amarelo", "verde", "branco", "preto", "marrom", "cinza"];
-    const pergunta = prompt(`Informe uma cor`).toLowerCase().trim();
-    const sorte = Math.floor(Math.random() * 7);
 
-    if (pergunta == nomeCores[0] && sorte == 0) {
+    function parabens(cor) {
+        alert(`PARABÉNS! VOCÊ ESTÁ COM SORTE NA COR ${nomeCores[cor].toUpperCase()}!`);
+    }
+
+    let vencer = 0;
+    do {
+        const sorte = Math.floor(Math.random() * 7);
+        const pergunta = nomeCores.indexOf(prompt(`Informe uma cor`).toLocaleLowerCase().trim());
+
+        if (pergunta > -1 && pergunta == sorte) {
+            parabens(pergunta);
+            vencer++;
+        }
+        else {
+            alert(`NÃO FOI DESSA VEZ... TENTE NOVAMENTE!`);
+        }
+    } while (vencer == 0);
+
+
+
+
+   /*  if (pergunta == nomeCores[0] && sorte == 0) {
         alert(`PARABÉNS! VOCÊ ESTÁ COM SORTE NA COR ${nomeCores[0].toUpperCase()}!`);
     }
     else if (pergunta == nomeCores[1] && sorte == 1) {
@@ -38,7 +57,7 @@
     }
     else {
         alert(`NÃO FOI DESSA VEZ... TENTE NOVAMENTE!`);
-    }
+    } */
 
     /*
     Para gerar números aleatórios, há a função random, da biblioteca Math. Nesse caso, o comando deverá ser o Math.random().

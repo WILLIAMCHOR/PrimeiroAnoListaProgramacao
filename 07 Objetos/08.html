@@ -1,0 +1,27 @@
+<script>
+    /*
+    PROBLEMA: CONTA BANCÁRIA
+    Crie um objeto chamado conta com as propriedades numero, saldo, tipo, e crie um método que retorne todas as propriedades.
+    */
+    
+    const conta = {
+        numero: "007",
+        saldo: "1.000.000.000 de doláres",
+        tipo: "Lubank"
+    };
+    function show(a) {
+        document.write(`
+        </br>
+        <strong>Conta</strong>
+        </br>
+        </br>
+        Numero: ${a.numero}
+        </br>
+        Saldo: ${a.saldo}
+        </br>
+        Tipo: ${a.tipo}
+        `);
+    }
+    let resultado = show(conta);
+    
+</script>

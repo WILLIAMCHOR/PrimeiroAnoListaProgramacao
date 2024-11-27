@@ -1,0 +1,15 @@
+<script>
+    let numerica = [0, 1];
+    const pergunta = Number(prompt('Quantos números você que na sequência de fibonacci'));
+
+    if (numerica.length > pergunta) {
+        numerica.splice(pergunta, (numerica.length - pergunta));
+    }
+    else {
+        for (let i = numerica.length; i < pergunta; i++) {
+            const numero = numerica[numerica.length - 1] + numerica[numerica.length - 2];
+            numerica.push(numero);
+        }
+    }
+    console.log(numerica);
+</script>

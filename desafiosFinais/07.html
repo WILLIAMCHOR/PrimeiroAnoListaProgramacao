@@ -1,0 +1,12 @@
+<script>
+    //Problema: Par ou Ímpar
+    /* 
+    Criar uma função parOuImpar(numero) que exibe se o número é par ou ímpar, que será informado pelo usuário.
+    */
+
+    function parOuImpar(numero) {
+        return numero % 2 == 0;
+    }
+    const numero = Number(prompt('Digite um número'));
+    alert(`O número é ${(parOuImpar(numero)) ? 'Par' : 'Impar'}`);
+</script>

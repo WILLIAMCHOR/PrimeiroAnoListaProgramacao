@@ -1,0 +1,112 @@
+<script>
+    const alunos = [
+        { nome: "Ana", notas: [7, 8, 9] },
+        { nome: "Carlos", notas: [5, 6, 4] },
+        { nome: "Bruna", notas: [9, 9, 10] }
+    ];
+    /*
+    1. Criar uma função calcularMedia(nome) que retorna a média de um aluno.
+    2. Criar uma função classificarAluno(nome) que retorna "Aprovado", "Recuperação" ou "Reprovado" com base na média.
+    3. Criar uma função adicionarNota(nome, nota) para incluir mais notas ao aluno.
+    4. Criar um menu interativo para buscar alunos, adicionar notas e verificar médias.
+    */
+
+    function calcularMedia(nome) {
+        const index = alunos.findIndex((aluno) => aluno.nome == nome);
+        if (index == -1) return 'aluno vazio';
+        let media = 0;
+        alunos[index].notas.forEach((nota) => media += nota);
+        return media /= alunos[index].notas.length;
+        
+    }
+    function classificarAluno(nome) {
+        const index = alunos.findIndex((aluno) => aluno.nome == nome);
+        if (index == -1) return 'aluno vazio';
+
+        const media = calcularMedia(nome);
+
+        if (media < 4) return 'REPROVADO!!!';
+        else if (media >= 4 && media < 6) return 'VAI PRA SEGUNDA CHAMADA!';
+        return 'APROVADO';
+    }
+    function adicionarNota(nome, nota) {
+        const index = alunos.findIndex((aluno) => aluno.nome == nome);
+        if (index == -1) return 'aluno vazio';
+        if (nota < 0 || nota > 10) return 'nota inválida';
+        alunos[index].notas.push(nota);
+        return 'Nota adicionada';
+    }
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03</title>
+</head>
+<body>
+    <form action="#" autocomplete="off">
+        <p>
+            <label for="aluno">Procurar por aluno</label>
+            <input type="text" name="aluno" id="inpName">
+        </p>
+        <p id="seAdiciona">
+            <input type="number" name="nota" id="inpNota">
+        </p>
+        <p>
+            <button type="button" id="btnBuscar">Buscar por aluno</button>
+            <button type="button" id="btnAdicionar">Adicionar nota</button>
+        </p>
+        <div id="exibir"></div>
+    </form>
+    <script>
+        // DOM
+
+        let inpName;
+        let inpNota;
+
+        const inputs = document.querySelectorAll('input');
+        const exibir = document.getElementById('exibir');
+        
+        // aumação dos dados -> nome, nota
+        inputs.forEach((element) => element.addEventListener("input", () => {
+            const text = element.value;
+            if (element.id == 'inpName') inpName = text;
+            else inpNota = text;
+        }));
+
+
+        // exibir a busca
+        document.getElementById('btnBuscar').addEventListener("click", () => {
+
+            const aluno = alunos.find((estudante) => estudante.nome == inpName);
+
+            if (!aluno) return exibir.innerHTML = `<p> Aluno não encontrado </p>`;
+
+            exibir.innerHTML = `
+            <p>Nome do aluno: ${aluno.nome} </p>
+            <ul>
+                <li><strong>Média geral:</strong> ${calcularMedia(aluno.nome).toFixed(1)}</li>
+                <li><strong>Notas:</strong> ${aluno.notas.join(', ')}</li>
+                <li><strong>Situação:</strong> ${classificarAluno(aluno.nome)}</li>
+            </ul>
+            `;
+        });
+        const paragrafo = document.getElementById('seAdiciona');
+        document.getElementById('btnAdicionar').addEventListener('click', () => {
+            if (paragrafo.className) {
+                exibir.innerHTML = `<p>${adicionarNota(inpName, Number(inpNota))}</p>`;
+            }
+            paragrafo.classList.toggle('mostrar');
+        });
+    </script>
+</body>
+<style>
+    #seAdiciona {
+        display: none;
+    }
+    #seAdiciona.mostrar {
+        display: block;
+    }
+</style>
+</html>

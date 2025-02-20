@@ -1,0 +1,38 @@
+<script>
+    let listaCompras = ["Arroz", "Feijão", "Leite"];
+    //Problema: Lista de Compras
+    /*
+    1. Criar uma função adicionarItem(item) que adiciona um novo item à lista.
+    2. Criar uma função removerItem(item) que remove um item da lista se ele existir.
+    3. Criar uma função listarItens() que exibe todos os itens da lista.
+    4. Criar um loop(while) para permitir ao usuário interagir com as opções até escolher sair.
+    */
+    
+    function adicionarItem(item) {
+        if (!item) return 'Item vazio';
+        listaCompras.push(item);
+        return 'Item adicionado';
+    }
+    function removerItem(item) {
+        const index = listaCompras.findIndex((compra) => compra == item);
+        if (index == -1) return 'Nenhum item listado';
+        listaCompras.splice(index, 1);
+        return 'Item removido';
+    }
+    function listarItens() {
+        return JSON.stringify(listaCompras);
+    } 
+    
+    let request;
+    do {
+        request = Number(prompt('Escolher função'));
+        if (request == 0) alert('Saindo');
+        else {
+            let item;
+            if (request != 3) item = prompt('Digitar nome do item');
+            if (request == 1) alert(adicionarItem(item));
+            else if (request == 2) alert(removerItem(item));
+            else if (request == 3) alert(listarItens());
+        }
+    } while (request != 0);
+</script>

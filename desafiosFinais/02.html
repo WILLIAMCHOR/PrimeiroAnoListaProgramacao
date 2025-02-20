@@ -1,0 +1,75 @@
+<script>
+    const quartos = [
+        { numero: 101, tipo: "Standard", disponivel: true, preco: 150 },
+        { numero: 102, tipo: "Luxo", disponivel: true, preco: 300 },
+        { numero: 103, tipo: "Standard", disponivel: false, preco: 150 }
+    ];
+    //Problema: Reserva de Hotel
+    /*
+    1. Criar uma função listarQuartosDisponiveis() que mostra apenas os quartos livres.
+    2. Criar uma função reservarQuarto(numero) que altera a disponibilidade do quarto.
+    3. Criar uma função cancelarReserva(numero) que libera um quarto ocupado.
+    4. Criar uma função calcularFaturamento() que soma o valor de todas as reservas feitas.
+    5. Criar um loop (while) para o usuário interagir com as opções até escolher sair (opção 0).
+    */
+    function listarQuartosDisponiveis() {
+        const disponivel = [];
+        for (const quarto of quartos) if (quarto.disponivel) disponivel.push(quarto);
+        return JSON.stringify(disponivel);
+    }
+    function reservarQuarto(numero) {
+        if (!(/101|102|103/).test(numero)) return 'Número inválido';
+        
+        const index = quartos.findIndex((quarto) => quarto.numero == numero);
+        if (!quartos[index].disponivel) return 'O quarto está indisponivel';
+
+        quartos[index].disponivel = false;
+        return `O quarto ${numero} for reservado com sucesso por ${quartos[index].preco}`;
+    }
+    function cancelarReserva(numero) {
+        if (!(/101|102|103/).test(numero)) return 'Número inválido';
+        
+        const index = quartos.findIndex((quarto) => quarto.numero == numero);
+        if (quartos[index].disponivel) return 'O quarto já estava disponivel';
+
+        quartos[index].disponivel = true;
+        return `Foi cancelado a reserva do quarto ${numero}`;
+    }
+    function calcularFaturamento() {
+        let total = 0;
+        for (const quarto of quartos) {
+            if (!quarto.disponivel) total += quarto.preco
+        }
+        return `Preço total ${total} mangos`;
+    }
+
+    let request;
+    
+    function perguntar(lista) {
+        const requests = [];
+        for (const nome of lista) {
+            const pergunta = prompt(nome);
+            requests.push(pergunta);
+        }
+        return requests;
+    }
+    do {    
+        request = Number(prompt('Escolha um método ou saia apertando Zero'));
+        if (request == 1) {
+            alert(listarQuartosDisponiveis());
+        }
+        else if (request == 2) {
+            alert(reservarQuarto(...perguntar(['numero do quarto'])));
+        }
+        else if (request == 3) {
+            alert(cancelarReserva(...perguntar(['numero do quarto'])));
+        }
+        else if (request == 4) {
+            alert(calcularFaturamento());
+        }
+        else {
+            alert('Saindo do modo pergunta');
+        }
+    } while(request != 0);
+    
+</script>
